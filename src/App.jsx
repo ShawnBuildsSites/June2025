@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCss3, faCss3Alt, faGit, faHtml5, faJsSquare, faMicrosoft, faPhp, faReact, faVuejs, faWordpress } from '@awesome.me/kit-391a0d452d/icons/classic/brands';
+import { faCss3, faCss3Alt, faGit, faGithubAlt, faHtml5, faJsSquare, faLinkedin, faMicrosoft, faPhp, faReact, faVuejs, faWordpress } from '@awesome.me/kit-391a0d452d/icons/classic/brands';
 import { faCode, faComment, faGlobe, faPaperPlane, faPencil } from '@fortawesome/free-solid-svg-icons';
 import { faBlock, faCodeSimple, faGrid } from '@awesome.me/kit-391a0d452d/icons/classic/light';
 
@@ -20,7 +20,13 @@ function Navbar() {
           <a onClick={() => handleScroll('skills')} className="text-gray-200 hover:text-white">Skills</a>
           <a onClick={() => handleScroll('projects')} className="mx-10 text-gray-200 hover:text-white">Projects</a>
           <a onClick={() => handleScroll('about')} className="text-gray-200 hover:text-white">About</a>
-          <a onClick={() => handleScroll('contact')} className="ml-10 text-yellow-200 hover:text-white">Contact</a>
+          <a onClick={() => handleScroll('contact')} className="mx-10 text-yellow-200 hover:text-white">Contact</a>
+          <a href="https://linkedin.com/in/shawntgray" target="_blank" className="text-gray-200 hover:text-white">
+            <FontAwesomeIcon icon={faLinkedin} />
+          </a>
+          <a href="https://github.com/ShawnBuildsSites" target="_blank" className="ml-10 text-gray-200 hover:text-white">
+            <FontAwesomeIcon icon={faGithubAlt} />
+          </a>
         </li>
       </ul>
     </nav>
