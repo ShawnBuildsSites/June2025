@@ -1,9 +1,9 @@
-/* import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg' */
 import { useEffect, useState } from 'react';
 import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCss3, faCss3Alt, faGit, faHtml5, faJsSquare, faMicrosoft, faPhp, faReact, faVuejs, faWordpress } from '@awesome.me/kit-391a0d452d/icons/classic/brands';
+import { faCode, faGlobe, faPencil } from '@fortawesome/free-solid-svg-icons';
+import { faBlock, faCodeSimple, faGrid } from '@awesome.me/kit-391a0d452d/icons/classic/light';
 
 function App() {
   const handleScrollToProjects = () => {
@@ -12,10 +12,58 @@ function App() {
       projectsSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
+  const skills = [
+    { name: 'HTML', icon: faHtml5 },
+    { name: 'CSS', icon: faCss3Alt },
+    { name: 'JavaScript', icon: faJsSquare },
+    { name: 'PHP', icon: faPhp },
+    { name: 'C#', icon: faCode },
+    { name: 'WordPress', icon: faWordpress },
+    { name: 'Webflow', icon: faGlobe },
+    { name: 'React', icon: faReact },
+    { name: 'Lit', icon: faBlock },
+    { name: 'Vue.js', icon: faVuejs },
+    { name: 'Tailwind', icon: faCss3 },
+    { name: 'Git', icon: faGit },
+    { name: 'Figma', icon: faPencil },
+    { name: 'Adobe XD', icon: faGrid },
+    { name: 'Visual Studio Code', icon: faCodeSimple },
+    { name: '.NET', icon: faMicrosoft }
+  ];
+
+  const projects = [
+    {
+      name: 'React Portfolio',
+      description: 'Yes, I am featuring this very site you are viewing right now. This is a React project that handles JSON objects, plenty of JavaScript techniques, and modular design that makes React so popular.',
+      image: '',
+      tech: 'React, Vite, JavaScript',
+      url: 'https://github.com/ShawnBuildsSites/June2025',
+      cta: 'View on Github'
+    }, {
+      name: '',
+      description: '',
+      image: '',
+      tech: '',
+      url: '',
+      cta: ''
+    }, {
+      name: '',
+      description: '',
+      image: '',
+      tech: '',
+      url: '',
+      cta: ''
+    }, {
+      name: '',
+      description: '',
+      image: '',
+      tech: '',
+      url: '',
+      cta: ''
+    }
+  ];
 
   const colorChoices = ['orange-500', 'orange-600', 'orange-700', 'teal-500', 'teal-600', 'teal-700', 'violet-500', 'violet-600', 'violet-700'];
-  const skills = ['HTML', 'CSS', 'JavaScript', 'PHP', 'C#', 'WordPress', 'Webflow', 'React', 'Lit', 'Vue.js', 'Tailwind', 'Git', 'Figma', 'Adobe XD', 'Visual Studio Code', '.NET'];
-
 
   const [randomColor, setRandomColor] = useState([]);
   useEffect(() => {
@@ -61,8 +109,8 @@ function App() {
         <h2 className="text-3xl font-bold mb-8 text-center">Skills & Tools</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           {skills.map((skill, index) => (
-            <div key={skill} className={`bg-${randomColor[index]} text-gray-200 p-4 rounded-xl shadow-sm`}>
-              {skill}
+            <div key={skill.name} className={`bg-${randomColor[index]} text-gray-200 p-4 rounded-xl shadow-sm`}>
+              {skill.icon && <FontAwesomeIcon icon={skill.icon} className='mr-3' />}{skill.name}
             </div>
           ))}
         </div>
@@ -70,18 +118,24 @@ function App() {
 
       {/* Projects Section */}
       <section className="py-16 bg-gray-50 px-6" id="projects">
-        <h2 className="text-3xl font-bold mb-8 text-center">Portfolio Projects</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center">What I've Built</h2>
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-            <img src="https://via.placeholder.com/600x300" alt="Project" className="rounded mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Project Name</h3>
-            <p className="text-gray-700 mb-2">
-              Short description of what you built and the value it delivered.
-            </p>
-            <p className="text-sm text-gray-500 mb-2">Tech: React, Tailwind, API</p>
-            <a href="#" className="text-blue-600 hover:underline">View Live</a>
-          </div>
-          {/* Repeat for more projects */}
+          {projects.map(project => (
+            <div key="project.name" className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+              <img
+                src={project.image}
+                alt={project.name}
+                className="rounded mb-4"
+              />
+              <h3 className="text-xl font-semibold">{project.name}</h3>
+              <p className="text-sm text-gray-500 mt-3">Tech: {project.tech}</p>
+              <p className="text-gray-700 text-left px-5 py-2">{project.description}</p>
+              <a
+                href={project.url}
+                className="text-blue-600 hover:underline"
+              >{project.cta}</a>
+            </div>
+          ))}
         </div>
       </section>
 
