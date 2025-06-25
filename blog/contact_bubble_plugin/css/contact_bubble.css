@@ -1,0 +1,63 @@
+.sticky-contact-button {
+  position: fixed;
+  bottom: 20px;
+  right: 25px;
+  z-index: 999;
+  background-color: oklch(39.8% 0.195 277.366);
+  color: white;
+  border-radius: 30px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  animation: pulse 2s infinite;
+  overflow: hidden;
+  padding-left: 75px;
+  transition: background-color .2s ease, width .3s ease, transform .3s ease, padding-left .3s ease;
+}
+
+.sticky-contact-button-icon {
+  opacity: 1 !important;
+  overflow: visible !important;
+  visibility: visible !important;
+  color: #fff;
+}
+
+.sticky-contact-button-icon path {
+  fill: #fff;
+}
+
+.sticky-contact-button:hover {
+  background-color: oklch(51.1% 0.262 276.966);
+  color: white;
+  width: 140px;
+  padding-left: 0;
+}
+
+.sticky-contact-button-text {
+  margin-left: 10px;
+  transition: opacity .3s ease;
+  color: white;
+  opacity: 0;
+}
+
+.sticky-contact-button:hover .sticky-contact-button-text {
+  opacity: 1;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
