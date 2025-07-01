@@ -21,6 +21,7 @@ function Navbar() {
           <a onClick={() => handleScroll('projects')} className="mx-10 text-gray-200 hover:text-white">Projects</a>
           <a onClick={() => handleScroll('about')} className="text-gray-200 hover:text-white">About</a>
           <a onClick={() => handleScroll('contact')} className="mx-10 text-yellow-200 hover:text-white">Contact</a>
+          <a href="https://shawntgray.com/blog" className="mx-10 text-yellow-200 hover:text-white">Blog</a>
           <a href="https://linkedin.com/in/shawntgray" target="_blank" className="text-gray-200 hover:text-white">
             <FontAwesomeIcon icon={faLinkedin} />
           </a>
